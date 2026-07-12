@@ -18,8 +18,6 @@
   --shadow-lg:0 10px 32px rgba(0,0,0,.12);--radius:12px;
 }
 body{font-family:'DM Sans',sans-serif;background:var(--gray-50);color:var(--gray-900);font-size:13.5px;line-height:1.5}
-
-/* NAV */
 header{position:sticky;top:0;z-index:100;background:var(--white);border-bottom:1px solid var(--gray-200);padding:0 28px;height:56px;display:flex;align-items:center;justify-content:space-between}
 .logo{display:flex;align-items:center;gap:9px;text-decoration:none}
 .logo-icon{background:var(--blue);color:white;width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:16px}
@@ -32,18 +30,12 @@ nav a:hover{color:var(--blue)}
 .avatar{width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#6366f1,#8b5cf6);display:flex;align-items:center;justify-content:center;color:white;font-weight:600;font-size:13px;border:2px solid var(--gray-200)}
 .nav-profile span{font-weight:500;color:var(--gray-700)}
 .nav-profile i{font-size:10px;color:var(--gray-400)}
-
-/* LAYOUT */
 .app-body{display:flex;min-height:calc(100vh - 56px)}
-
-/* ICON BAR */
 aside.icon-bar{width:64px;background:var(--white);border-right:1px solid var(--gray-200);display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:20px 0}
 .icon-bar .top-icons,.icon-bar .bottom-icons{display:flex;flex-direction:column;align-items:center;gap:6px}
 .icon-btn{width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:10px;color:var(--gray-400);text-decoration:none;transition:all .15s;font-size:16px;cursor:pointer;background:none;border:none}
 .icon-btn:hover{color:var(--gray-700);background:var(--gray-100)}
 .icon-btn.active{color:var(--blue);background:var(--blue-light);border:1px solid var(--blue-mid)}
-
-/* FILTERS */
 aside.filters{width:240px;background:var(--white);border-right:1px solid var(--gray-200);padding:20px;overflow-y:auto;display:flex;flex-direction:column;gap:20px}
 .filters-header{display:flex;align-items:center;gap:7px;font-weight:600;font-size:14px;color:var(--gray-900);border-bottom:1px solid var(--gray-200);padding-bottom:14px}
 .filters-header i{color:var(--blue)}
@@ -59,8 +51,6 @@ aside.filters{width:240px;background:var(--white);border-right:1px solid var(--g
 #price-display{font-size:12px;color:var(--blue);font-weight:600;margin-top:4px}
 .filter-reset{width:100%;padding:8px;border-radius:8px;border:1px solid var(--gray-200);background:var(--gray-50);color:var(--gray-600);font-family:inherit;font-size:12.5px;font-weight:500;cursor:pointer;transition:all .15s;margin-top:4px}
 .filter-reset:hover{background:var(--gray-100);color:var(--gray-900)}
-
-/* MAIN */
 main{flex:1;padding:24px 28px;overflow-y:auto;display:flex;flex-direction:column;gap:20px;padding-bottom:80px}
 .search-bar{position:relative}
 .search-bar i{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--gray-400);font-size:14px;pointer-events:none}
@@ -68,8 +58,6 @@ main{flex:1;padding:24px 28px;overflow-y:auto;display:flex;flex-direction:column
 .search-bar input::placeholder{color:var(--gray-400)}
 .search-bar input:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.1)}
 .section-title{font-size:18px;font-weight:700;color:var(--gray-900)}
-
-/* CARDS */
 .cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
 .cloud-card{background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius);padding:20px;display:flex;flex-direction:column;gap:14px;box-shadow:var(--shadow-sm);transition:box-shadow .2s,transform .2s,opacity .2s}
 .cloud-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-2px)}
@@ -106,13 +94,16 @@ main{flex:1;padding:24px 28px;overflow-y:auto;display:flex;flex-direction:column
 .btn-secondary{background:var(--gray-100);color:var(--gray-700);border:1.5px solid var(--gray-200)}
 .btn-secondary:hover{background:var(--gray-200)}
 .btn-secondary.active-compare{background:var(--blue-light);color:var(--blue);border-color:var(--blue)}
-
-/* NO RESULTS */
 .no-results{text-align:center;padding:48px 24px;color:var(--gray-400);display:none;grid-column:1/-1}
 .no-results i{font-size:36px;margin-bottom:12px;display:block}
 .no-results p{font-size:14px}
-
-/* COMPARE BAR */
+.loading{text-align:center;padding:48px 24px;color:var(--gray-400);grid-column:1/-1}
+.loading i{font-size:36px;margin-bottom:12px;display:block}
+.loading p{font-size:14px}
+.error-msg{text-align:center;padding:48px 24px;color:#ef4444;grid-column:1/-1}
+.error-msg i{font-size:36px;margin-bottom:12px;display:block}
+.error-msg p{font-size:14px}
+.ratings-breakdown{font-size:11px;color:var(--gray-400);margin-top:2px}
 .compare-bar{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--white);border:1px solid var(--gray-200);border-radius:50px;padding:10px 18px;display:flex;align-items:center;gap:12px;box-shadow:var(--shadow-lg);z-index:200;transition:all .3s;opacity:0;pointer-events:none}
 .compare-bar.visible{opacity:1;pointer-events:all}
 .compare-label{font-weight:600;font-size:13px;color:var(--gray-700);white-space:nowrap}
@@ -125,8 +116,6 @@ main{flex:1;padding:24px 28px;overflow-y:auto;display:flex;flex-direction:column
 .compare-close:hover{background:var(--gray-100);color:var(--gray-900)}
 .btn-compare-now{padding:8px 16px;border-radius:20px;background:var(--blue);color:white;border:none;font-family:inherit;font-size:12.5px;font-weight:600;cursor:pointer;transition:background .15s;white-space:nowrap}
 .btn-compare-now:hover{background:#1d4ed8}
-
-/* MODAL */
 .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:300;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .2s}
 .modal-overlay.visible{opacity:1;pointer-events:all}
 .modal{background:var(--white);border-radius:16px;padding:28px;max-width:700px;width:90%;box-shadow:var(--shadow-lg);transform:translateY(20px);transition:transform .2s}
@@ -163,7 +152,6 @@ main{flex:1;padding:24px 28px;overflow-y:auto;display:flex;flex-direction:column
 
 <div class="app-body">
 
-  <!-- ICON BAR -->
   <aside class="icon-bar">
     <div class="top-icons">
       <button class="icon-btn active"><i class="fa-solid fa-house"></i></button>
@@ -178,10 +166,8 @@ main{flex:1;padding:24px 28px;overflow-y:auto;display:flex;flex-direction:column
     </div>
   </aside>
 
-  <!-- FILTERS -->
   <aside class="filters">
     <div class="filters-header"><i class="fa-solid fa-sliders"></i> Filters &amp; Preferences</div>
-
     <div class="filter-group">
       <h3>Cloud Providers</h3>
       <div class="filter-options" id="provider-filters">
@@ -192,7 +178,6 @@ main{flex:1;padding:24px 28px;overflow-y:auto;display:flex;flex-direction:column
         <label class="filter-option"><input type="checkbox" value="oracle"><span>Oracle Cloud</span></label>
       </div>
     </div>
-
     <div class="filter-group">
       <h3>Free Trial Status</h3>
       <div class="filter-options">
@@ -202,7 +187,6 @@ main{flex:1;padding:24px 28px;overflow-y:auto;display:flex;flex-direction:column
         <label class="filter-option"><input type="radio" name="trial" value="none"><span>No Free Trial</span></label>
       </div>
     </div>
-
     <div class="filter-group">
       <h3>Price Range (Est. Monthly)</h3>
       <div class="price-slider">
@@ -211,7 +195,6 @@ main{flex:1;padding:24px 28px;overflow-y:auto;display:flex;flex-direction:column
         <div id="price-display">Up to $2000/mo</div>
       </div>
     </div>
-
     <div class="filter-group">
       <h3>Key Services</h3>
       <div class="filter-options" id="service-filters">
@@ -223,204 +206,28 @@ main{flex:1;padding:24px 28px;overflow-y:auto;display:flex;flex-direction:column
         <label class="filter-option"><input type="checkbox" value="aiml"><span>AI/ML</span></label>
       </div>
     </div>
-
     <button class="filter-reset" id="reset-btn"><i class="fa-solid fa-rotate-left"></i> Reset All Filters</button>
   </aside>
 
-  <!-- MAIN -->
   <main>
     <div class="search-bar">
       <i class="fa-solid fa-magnifying-glass"></i>
       <input type="text" id="search-input" placeholder="Search cloud services (e.g., Kubernetes, Database, Serverless)">
     </div>
-
     <h1 class="section-title">Featured Cloud Platforms</h1>
-
     <div class="cards-grid" id="cards-grid">
-
-      <!-- AWS -->
-      <div class="cloud-card"
-        data-provider="aws"
-        data-trial="active"
-        data-price="1500"
-        data-services="compute,containers,databases,storage,serverless,aiml"
-        data-search="aws amazon web services compute ec2 s3 lambda rds kubernetes">
-        <div class="card-header">
-          <div class="card-logo"><span class="logo-aws">aws<span>↗</span></span></div>
-          <div class="rating"><i class="fa-solid fa-star"></i> 4.7/5</div>
-        </div>
-        <div class="badge badge-active">ACTIVE FREE TRIAL</div>
-        <hr class="card-divider">
-        <div class="card-info">
-          <div class="info-block">
-            <span class="info-label">Price Range:</span>
-            <span class="info-value">$5 – $1500/mo (Est.)</span>
-            <a href="#" class="price-link">Pricing Calculator <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-          </div>
-          <div class="info-block">
-            <span class="info-label">Free Offers:</span>
-            <ul class="bullet-list"><li>12 Months Free</li><li>750 hours t2.micro</li></ul>
-          </div>
-          <div class="info-block">
-            <span class="info-label">Key Strengths:</span>
-            <ul class="bullet-list"><li>Global Reach</li><li>Enterprise Integration</li><li>Data Analytics</li></ul>
-          </div>
-        </div>
-        <div class="card-actions">
-          <button class="btn btn-primary">View Full Catalogue</button>
-          <button class="btn btn-secondary compare-btn" data-id="aws">Add to Compare</button>
-        </div>
+      <div class="loading" id="loading">
+        <i class="fa-solid fa-spinner fa-spin"></i>
+        <p>Loading cloud providers from backend...</p>
       </div>
-
-      <!-- Azure -->
-      <div class="cloud-card"
-        data-provider="azure"
-        data-trial="active"
-        data-price="1500"
-        data-services="compute,containers,databases,storage,serverless,aiml"
-        data-search="azure microsoft cloud virtual machines sql serverless kubernetes">
-        <div class="card-header">
-          <div class="card-logo">
-            <div class="logo-azure"><div class="azure-triangle"></div>Azure</div>
-          </div>
-          <div class="rating"><i class="fa-solid fa-star"></i> 4.7/5</div>
-        </div>
-        <div class="badge badge-active">ACTIVE FREE TRIAL</div>
-        <hr class="card-divider">
-        <div class="card-info">
-          <div class="info-block">
-            <span class="info-label">Price Range:</span>
-            <span class="info-value">$5 – $1500/mo (Est.)</span>
-            <a href="#" class="price-link">Pricing Calculator <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-          </div>
-          <div class="info-block">
-            <span class="info-label">Free Offers:</span>
-            <ul class="bullet-list"><li>$200 Credit for 30 Days</li><li>12 Months Popular Services Free</li></ul>
-          </div>
-          <div class="info-block">
-            <span class="info-label">Key Strengths:</span>
-            <ul class="bullet-list"><li>Global Reach</li><li>Enterprise Integration</li><li>Data Analytics</li></ul>
-          </div>
-        </div>
-        <div class="card-actions">
-          <button class="btn btn-primary">View Full Catalogue</button>
-          <button class="btn btn-secondary compare-btn" data-id="azure">Add to Compare</button>
-        </div>
-      </div>
-
-      <!-- GCP -->
-      <div class="cloud-card"
-        data-provider="gcp"
-        data-trial="tier"
-        data-price="1500"
-        data-services="compute,containers,databases,storage,serverless,aiml"
-        data-search="gcp google cloud platform bigquery kubernetes engine compute storage ai ml">
-        <div class="card-header">
-          <div class="card-logo"><span class="logo-gcp">GCP</span></div>
-          <div class="rating"><i class="fa-solid fa-star"></i> 4.7/5</div>
-        </div>
-        <div class="badge badge-tier">FREE TIER AVAILABLE</div>
-        <hr class="card-divider">
-        <div class="card-info">
-          <div class="info-block">
-            <span class="info-label">Price Range:</span>
-            <span class="info-value">$5 – $1500/mo (Est.)</span>
-            <a href="#" class="price-link">Pricing Calculator <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-          </div>
-          <div class="info-block">
-            <span class="info-label">Free Offers:</span>
-            <ul class="bullet-list"><li>$300 Credit for 90 Days</li><li>Free Tier 20+ products</li></ul>
-          </div>
-          <div class="info-block">
-            <span class="info-label">Key Strengths:</span>
-            <ul class="bullet-list"><li>Global Reach</li><li>Enterprise Integration</li><li>Data Analytics</li></ul>
-          </div>
-        </div>
-        <div class="card-actions">
-          <button class="btn btn-primary">View Full Catalogue</button>
-          <button class="btn btn-secondary compare-btn" data-id="gcp">Add to Compare</button>
-        </div>
-      </div>
-
-      <!-- Oracle -->
-      <div class="cloud-card"
-        data-provider="oracle"
-        data-trial="tier"
-        data-price="1500"
-        data-services="compute,databases,storage"
-        data-search="oracle cloud infrastructure autonomous database compute storage">
-        <div class="card-header">
-          <div class="card-logo"><span class="logo-oracle">ORACLE CLOUD</span></div>
-          <div class="rating"><i class="fa-solid fa-star"></i> 4.7/5</div>
-        </div>
-        <div class="badge badge-tier">FREE TIER AVAILABLE</div>
-        <hr class="card-divider">
-        <div class="card-info">
-          <div class="info-block">
-            <span class="info-label">Price Range:</span>
-            <span class="info-value">$5 – $1500/mo (Est.)</span>
-            <a href="#" class="price-link">Pricing Calculator <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-          </div>
-          <div class="info-block">
-            <span class="info-label">Free Offers:</span>
-            <ul class="bullet-list"><li>$300 Credit for 90 Days</li><li>Free Tier 20+ products</li></ul>
-          </div>
-          <div class="info-block">
-            <span class="info-label">Key Strengths:</span>
-            <ul class="bullet-list"><li>Global Reach</li><li>Enterprise Integration</li><li>Data Analytics</li></ul>
-          </div>
-        </div>
-        <div class="card-actions">
-          <button class="btn btn-primary">View Full Catalogue</button>
-          <button class="btn btn-secondary compare-btn" data-id="oracle">Add to Compare</button>
-        </div>
-      </div>
-
-      <!-- IBM -->
-      <div class="cloud-card"
-        data-provider="ibm"
-        data-trial="none"
-        data-price="800"
-        data-services="compute,containers,databases,aiml"
-        data-search="ibm cloud watson ai kubernetes openshift databases compute">
-        <div class="card-header">
-          <div class="card-logo"><span class="logo-ibm">IBM</span></div>
-          <div class="rating"><i class="fa-solid fa-star"></i> 4.2/5</div>
-        </div>
-        <div class="badge" style="background:#f1f5f9;color:#64748b;">NO FREE TRIAL</div>
-        <hr class="card-divider">
-        <div class="card-info">
-          <div class="info-block">
-            <span class="info-label">Price Range:</span>
-            <span class="info-value">$10 – $800/mo (Est.)</span>
-            <a href="#" class="price-link">Pricing Calculator <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-          </div>
-          <div class="info-block">
-            <span class="info-label">Free Offers:</span>
-            <ul class="bullet-list"><li>Lite plan on select services</li><li>30-day access on some tiers</li></ul>
-          </div>
-          <div class="info-block">
-            <span class="info-label">Key Strengths:</span>
-            <ul class="bullet-list"><li>AI &amp; Watson</li><li>Hybrid Cloud</li><li>Enterprise Security</li></ul>
-          </div>
-        </div>
-        <div class="card-actions">
-          <button class="btn btn-primary">View Full Catalogue</button>
-          <button class="btn btn-secondary compare-btn" data-id="ibm">Add to Compare</button>
-        </div>
-      </div>
-
-      <!-- No results placeholder -->
       <div class="no-results" id="no-results">
         <i class="fa-solid fa-cloud-slash"></i>
         <p>No cloud platforms match your filters.<br>Try adjusting your search or filter criteria.</p>
       </div>
-
     </div>
   </main>
 </div>
 
-<!-- COMPARE BAR -->
 <div class="compare-bar" id="compare-bar">
   <span class="compare-label">Compare Selected</span>
   <div class="compare-chips" id="compare-chips"></div>
@@ -428,7 +235,6 @@ main{flex:1;padding:24px 28px;overflow-y:auto;display:flex;flex-direction:column
   <button class="compare-close" id="compare-clear"><i class="fa-solid fa-xmark"></i></button>
 </div>
 
-<!-- COMPARE MODAL -->
 <div class="modal-overlay" id="compare-modal">
   <div class="modal">
     <div class="modal-header">
@@ -440,29 +246,150 @@ main{flex:1;padding:24px 28px;overflow-y:auto;display:flex;flex-direction:column
 </div>
 
 <script>
-// ── DATA ──
-const PROVIDERS = {
-  aws:    { label: 'AWS',          color: '#fff3e0', textColor: '#ff9900', symbol: 'AWS' },
-  azure:  { label: 'Azure',        color: '#e3f2fd', textColor: '#0078d4', symbol: 'AZ' },
-  gcp:    { label: 'GCP',          color: '#fce4ec', textColor: '#4285f4', symbol: 'GCP' },
-  oracle: { label: 'Oracle',       color: '#fff0f0', textColor: '#f80000', symbol: 'OCI' },
-  ibm:    { label: 'IBM',          color: '#e8f4ff', textColor: '#0f62fe', symbol: 'IBM' },
+const API_BASE = 'http://localhost:5000/api';
+
+// ── PROVIDER UI CONFIG ──
+const PROVIDER_UI = {
+  aws:    { symbol:'AWS', color:'#fff3e0', textColor:'#ff9900', label:'AWS',
+            logo:'<span class="logo-aws">aws<span>↗</span></span>' },
+  azure:  { symbol:'AZ',  color:'#e3f2fd', textColor:'#0078d4', label:'Azure',
+            logo:'<div class="logo-azure"><div class="azure-triangle"></div>Azure</div>' },
+  gcp:    { symbol:'GCP', color:'#fce4ec', textColor:'#4285f4', label:'GCP',
+            logo:'<span class="logo-gcp">GCP</span>' },
+  oracle: { symbol:'OCI', color:'#fff0f0', textColor:'#f80000', label:'Oracle',
+            logo:'<span class="logo-oracle">ORACLE CLOUD</span>' },
+  ibm:    { symbol:'IBM', color:'#e8f4ff', textColor:'#0f62fe', label:'IBM',
+            logo:'<span class="logo-ibm">IBM</span>' },
 };
 
 // ── STATE ──
-let compareSet = new Set();
+let compareSet   = new Set();
+let allProviders = [];
 const MAX_COMPARE = 3;
 
 // ── ELEMENTS ──
-const cards = Array.from(document.querySelectorAll('.cloud-card[data-provider]'));
-const searchInput = document.getElementById('search-input');
-const priceRange = document.getElementById('price-range');
+const grid         = document.getElementById('cards-grid');
+const loadingEl    = document.getElementById('loading');
+const noResults    = document.getElementById('no-results');
+const searchInput  = document.getElementById('search-input');
+const priceRange   = document.getElementById('price-range');
 const priceDisplay = document.getElementById('price-display');
-const noResults = document.getElementById('no-results');
-const compareBar = document.getElementById('compare-bar');
+const compareBar   = document.getElementById('compare-bar');
 const compareChips = document.getElementById('compare-chips');
 const compareModal = document.getElementById('compare-modal');
 const compareModalBody = document.getElementById('compare-modal-body');
+
+// ── FETCH PROVIDERS FROM BACKEND ──
+async function fetchProviders() {
+  try {
+    const res  = await fetch(`${API_BASE}/providers`);
+    const json = await res.json();
+
+    if (!json.success) throw new Error('API returned error');
+
+    allProviders = json.data;
+    loadingEl.style.display = 'none';
+
+    allProviders.forEach(p => {
+      const card = buildCard(p);
+      grid.insertBefore(card, noResults);
+    });
+
+    attachCompareListeners();
+    applyFilters();
+
+  } catch (err) {
+    loadingEl.innerHTML = `
+      <div class="error-msg">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        <p>Could not connect to backend.<br>Make sure server is running:<br>
+        <code style="font-size:11px;background:#f1f5f9;padding:4px 8px;border-radius:4px;margin-top:8px;display:inline-block">
+          cd backend &amp;&amp; node server.js
+        </code></p>
+      </div>`;
+  }
+}
+
+// ── BUILD CARD FROM API DATA ──
+function buildCard(provider) {
+  const ui      = PROVIDER_UI[provider.slug] || { symbol:'?', color:'#f1f5f9', textColor:'#334155', label: provider.name, logo: provider.name };
+  const rating  = provider.ratings?.overallRating ?? 'N/A';
+  const g2      = provider.ratings?.g2Rating ?? '-';
+  const gartner = provider.ratings?.gartnerRating ?? '-';
+  const tr      = provider.ratings?.trustRadiusRating ?? '-';
+  const trial   = provider.trialStatus ? 'active' : 'none';
+  const services= (provider.services || []).map(s => s.toLowerCase()).join(',');
+  const search  = `${provider.slug} ${provider.name} ${services}`.toLowerCase();
+
+  let trialBadge;
+  if (provider.trialStatus) {
+    trialBadge = `<div class="badge badge-active">ACTIVE FREE TRIAL</div>`;
+  } else {
+    trialBadge = `<div class="badge" style="background:#f1f5f9;color:#64748b;">NO FREE TRIAL</div>`;
+  }
+
+  const strengthsList = (provider.strengths || []).slice(0, 3)
+    .map(s => `<li>${s}</li>`).join('');
+
+  const servicesList = (provider.services || []).slice(0, 3)
+    .map(s => `<li>${s}</li>`).join('');
+
+  const card = document.createElement('div');
+  card.className = 'cloud-card';
+  card.dataset.provider = provider.slug;
+  card.dataset.trial    = trial;
+  card.dataset.price    = provider.priceMax || 9999;
+  card.dataset.services = services;
+  card.dataset.search   = search;
+
+  card.innerHTML = `
+    <div class="card-header">
+      <div class="card-logo">${ui.logo}</div>
+      <div class="rating" title="G2: ${g2} | Gartner: ${gartner} | TrustRadius: ${tr}/10">
+        <i class="fa-solid fa-star"></i> ${rating}/5
+      </div>
+    </div>
+    ${trialBadge}
+    <hr class="card-divider">
+    <div class="card-info">
+      <div class="info-block">
+        <span class="info-label">Price Range:</span>
+        <span class="info-value">$${provider.priceMin} – $${provider.priceMax}/mo (Est.)</span>
+        <a href="${provider.website}" target="_blank" class="price-link">
+          Visit Website <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+      </div>
+      <div class="info-block">
+        <span class="info-label">Key Strengths:</span>
+        <ul class="bullet-list">${strengthsList}</ul>
+      </div>
+      <div class="info-block">
+        <span class="info-label">Top Services:</span>
+        <ul class="bullet-list">${servicesList}</ul>
+      </div>
+      <div class="info-block">
+        <span class="info-label">Ratings Breakdown:</span>
+        <span class="ratings-breakdown">G2: ${g2} &nbsp;|&nbsp; Gartner: ${gartner} &nbsp;|&nbsp; TrustRadius: ${tr}/10</span>
+      </div>
+    </div>
+    <div class="card-actions">
+      <a href="${provider.website}" target="_blank" class="btn btn-primary">Visit Website</a>
+      <button class="btn btn-secondary compare-btn" data-id="${provider.slug}">Add to Compare</button>
+    </div>`;
+
+  return card;
+}
+
+// ── ATTACH COMPARE BUTTON LISTENERS ──
+function attachCompareListeners() {
+  document.querySelectorAll('.compare-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = btn.dataset.id;
+      if (compareSet.has(id)) removeFromCompare(id);
+      else addToCompare(id);
+    });
+  });
+}
 
 // ── FILTER LOGIC ──
 function getActiveProviders() {
@@ -472,41 +399,35 @@ function getActiveProviders() {
 function getTrialFilter() {
   return document.querySelector('input[name="trial"]:checked')?.value || 'all';
 }
-function getMaxPrice() {
-  return parseInt(priceRange.value);
-}
+function getMaxPrice() { return parseInt(priceRange.value); }
 function getActiveServices() {
   const checks = document.querySelectorAll('#service-filters input:checked');
   return checks.length === 0 ? null : Array.from(checks).map(c => c.value);
 }
 
 function applyFilters() {
-  const query = searchInput.value.trim().toLowerCase();
-  const providers = getActiveProviders();
-  const trial = getTrialFilter();
+  const query    = searchInput.value.trim().toLowerCase();
+  const providers= getActiveProviders();
+  const trial    = getTrialFilter();
   const maxPrice = getMaxPrice();
   const services = getActiveServices();
 
+  const cards = Array.from(document.querySelectorAll('.cloud-card[data-provider]'));
   let visible = 0;
+
   cards.forEach(card => {
-    const cp = card.dataset.provider;
-    const ct = card.dataset.trial;
+    const cp     = card.dataset.provider;
+    const ct     = card.dataset.trial;
     const cprice = parseInt(card.dataset.price);
-    const cs = card.dataset.services.split(',');
-    const csearch = card.dataset.search;
+    const cs     = card.dataset.services.split(',');
+    const csearch= card.dataset.search;
 
     let show = true;
-
-    // provider filter
-    if (providers && !providers.includes(cp)) show = false;
-    // trial filter
-    if (trial !== 'all' && ct !== trial) show = false;
-    // price filter
-    if (cprice > maxPrice) show = false;
-    // services filter
+    if (providers && !providers.includes(cp))              show = false;
+    if (trial !== 'all' && ct !== trial)                   show = false;
+    if (cprice > maxPrice)                                 show = false;
     if (services && !services.every(s => cs.includes(s))) show = false;
-    // search
-    if (query && !csearch.includes(query) && !cp.includes(query)) show = false;
+    if (query && !csearch.includes(query))                 show = false;
 
     card.classList.toggle('hidden', !show);
     if (show) visible++;
@@ -515,7 +436,7 @@ function applyFilters() {
   noResults.style.display = visible === 0 ? 'block' : 'none';
 }
 
-// ── EVENTS: FILTERS ──
+// ── FILTER EVENTS ──
 document.querySelectorAll('#provider-filters input, #service-filters input, input[name="trial"]')
   .forEach(el => el.addEventListener('change', applyFilters));
 
@@ -528,7 +449,8 @@ priceRange.addEventListener('input', () => {
 searchInput.addEventListener('input', applyFilters);
 
 document.getElementById('reset-btn').addEventListener('click', () => {
-  document.querySelectorAll('#provider-filters input, #service-filters input').forEach(c => c.checked = false);
+  document.querySelectorAll('#provider-filters input, #service-filters input')
+    .forEach(c => c.checked = false);
   document.querySelector('input[name="trial"][value="all"]').checked = true;
   priceRange.value = 2000;
   priceDisplay.textContent = 'No price limit';
@@ -540,23 +462,22 @@ document.getElementById('reset-btn').addEventListener('click', () => {
 function renderCompareBar() {
   compareChips.innerHTML = '';
   compareSet.forEach(id => {
-    const p = PROVIDERS[id];
+    const ui   = PROVIDER_UI[id] || { symbol: id, color: '#f1f5f9', textColor: '#334155' };
     const chip = document.createElement('div');
     chip.className = 'compare-chip';
-    chip.title = `Remove ${p.label}`;
-    chip.style.background = p.color;
-    chip.style.color = p.textColor;
-    chip.innerHTML = `<span>${p.symbol}</span>`;
+    chip.title = `Remove ${ui.label}`;
+    chip.style.background = ui.color;
+    chip.style.color      = ui.textColor;
+    chip.innerHTML = `<span>${ui.symbol}</span>`;
     chip.addEventListener('click', () => removeFromCompare(id));
     compareChips.appendChild(chip);
   });
-
   compareBar.classList.toggle('visible', compareSet.size > 0);
 }
 
 function addToCompare(id) {
   if (compareSet.size >= MAX_COMPARE) {
-    alert(`You can compare up to ${MAX_COMPARE} platforms at a time. Remove one first.`);
+    alert(`You can compare up to ${MAX_COMPARE} platforms. Remove one first.`);
     return;
   }
   compareSet.add(id);
@@ -571,21 +492,13 @@ function removeFromCompare(id) {
 }
 
 function updateCompareBtn(id, active) {
-  const btn = document.querySelector(`.compare-btn[data-id="${id}"]`);
+  const btn  = document.querySelector(`.compare-btn[data-id="${id}"]`);
   const card = btn?.closest('.cloud-card');
   if (!btn) return;
   btn.textContent = active ? '✓ Added to Compare' : 'Add to Compare';
   btn.classList.toggle('active-compare', active);
   card?.classList.toggle('comparing', active);
 }
-
-document.querySelectorAll('.compare-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const id = btn.dataset.id;
-    if (compareSet.has(id)) removeFromCompare(id);
-    else addToCompare(id);
-  });
-});
 
 document.getElementById('compare-clear').addEventListener('click', () => {
   [...compareSet].forEach(id => removeFromCompare(id));
@@ -594,32 +507,29 @@ document.getElementById('compare-clear').addEventListener('click', () => {
 });
 
 // ── COMPARE MODAL ──
-const CARD_DATA = {
-  aws:    { name:'Amazon Web Services', trial:'Active Free Trial', price:'$5 – $1500/mo', credit:'12 Months Free + 750h t2.micro', strengths:'Global Reach, Enterprise Integration, Data Analytics, 200+ Services', services:'Compute, Containers, Databases, Storage, Serverless, AI/ML', rating:'4.7/5' },
-  azure:  { name:'Microsoft Azure',     trial:'Active Free Trial', price:'$5 – $1500/mo', credit:'$200 Credit (30 days) + 12mo Popular Services', strengths:'Global Reach, Enterprise Integration, Hybrid Cloud, DevOps', services:'Compute, Containers, Databases, Storage, Serverless, AI/ML', rating:'4.7/5' },
-  gcp:    { name:'Google Cloud Platform', trial:'Free Tier Available', price:'$5 – $1500/mo', credit:'$300 Credit for 90 Days + 20+ Free Tier products', strengths:'Big Data, AI/ML, Kubernetes, Global Network', services:'Compute, Containers, Databases, Storage, Serverless, AI/ML', rating:'4.7/5' },
-  oracle: { name:'Oracle Cloud Infrastructure', trial:'Free Tier Available', price:'$5 – $1500/mo', credit:'$300 Credit for 90 Days + Always Free tier', strengths:'Autonomous Database, High Performance, Cost Efficiency', services:'Compute, Databases, Storage', rating:'4.7/5' },
-  ibm:    { name:'IBM Cloud', trial:'No Free Trial', price:'$10 – $800/mo', credit:'Lite plan on select services', strengths:'AI & Watson, Hybrid Cloud, Enterprise Security', services:'Compute, Containers, Databases, AI/ML', rating:'4.2/5' },
-};
-
 document.getElementById('compare-now-btn').addEventListener('click', () => {
-  const ids = [...compareSet];
+  const ids  = [...compareSet];
+  const data = ids.map(id => allProviders.find(p => p.slug === id)).filter(Boolean);
+
   const rows = [
-    ['Provider', ...ids.map(id => CARD_DATA[id].name)],
-    ['Trial Status', ...ids.map(id => CARD_DATA[id].trial)],
-    ['Price Range', ...ids.map(id => CARD_DATA[id].price)],
-    ['Free Credit', ...ids.map(id => CARD_DATA[id].credit)],
-    ['Key Strengths', ...ids.map(id => CARD_DATA[id].strengths)],
-    ['Services', ...ids.map(id => CARD_DATA[id].services)],
-    ['Rating', ...ids.map(id => CARD_DATA[id].rating)],
+    ['Provider',       ...data.map(p => p.name)],
+    ['Trial Status',   ...data.map(p => p.trialStatus ? '✅ Active' : '❌ None')],
+    ['Price Range',    ...data.map(p => `$${p.priceMin} – $${p.priceMax}/mo`)],
+    ['Overall Rating', ...data.map(p => `⭐ ${p.ratings?.overallRating ?? 'N/A'}/5`)],
+    ['G2 Rating',      ...data.map(p => p.ratings?.g2Rating ?? 'N/A')],
+    ['Gartner Rating', ...data.map(p => p.ratings?.gartnerRating ?? 'N/A')],
+    ['TrustRadius',    ...data.map(p => `${p.ratings?.trustRadiusRating ?? 'N/A'}/10`)],
+    ['Key Strengths',  ...data.map(p => (p.strengths || []).join(', '))],
+    ['Top Services',   ...data.map(p => (p.services  || []).slice(0,4).join(', '))],
+    ['Website',        ...data.map(p => `<a href="${p.website}" target="_blank" style="color:var(--blue)">Visit ↗</a>`)],
   ];
 
   let html = '<table class="compare-table"><thead><tr><th>Feature</th>';
-  ids.forEach(id => { html += `<th>${PROVIDERS[id].label}</th>`; });
+  ids.forEach(id => { html += `<th>${PROVIDER_UI[id]?.label || id}</th>`; });
   html += '</tr></thead><tbody>';
   rows.forEach(row => {
     html += '<tr>';
-    row.forEach((cell, i) => { html += i === 0 ? `<td>${cell}</td>` : `<td>${cell}</td>`; });
+    row.forEach(cell => { html += `<td>${cell}</td>`; });
     html += '</tr>';
   });
   html += '</tbody></table>';
@@ -628,16 +538,21 @@ document.getElementById('compare-now-btn').addEventListener('click', () => {
   compareModal.classList.add('visible');
 });
 
-document.getElementById('modal-close-btn').addEventListener('click', () => compareModal.classList.remove('visible'));
-compareModal.addEventListener('click', e => { if (e.target === compareModal) compareModal.classList.remove('visible'); });
+document.getElementById('modal-close-btn').addEventListener('click',
+  () => compareModal.classList.remove('visible'));
+compareModal.addEventListener('click',
+  e => { if (e.target === compareModal) compareModal.classList.remove('visible'); });
 
-// ── ICON BAR ACTIVE ──
+// ── ICON BAR ──
 document.querySelectorAll('.icon-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('.icon-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
   });
 });
+
+// ── INIT ──
+fetchProviders();
 </script>
 </body>
 </html>
