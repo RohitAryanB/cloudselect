@@ -190,9 +190,9 @@ main{flex:1;padding:24px 28px;overflow-y:auto;display:flex;flex-direction:column
     <div class="filter-group">
       <h3>Price Range (Est. Monthly)</h3>
       <div class="price-slider">
-        <input type="range" id="price-range" min="0" max="2000" value="2000">
-        <div class="price-labels"><span>$0</span><span>$2000+</span></div>
-        <div id="price-display">Up to $2000/mo</div>
+        <input type="range" id="price-range" min="0" max="10000" value="10000">
+        <div class="price-labels"><span>$0</span><span>$10000+</span></div>
+        <div id="price-display">Up to $10000/mo</div>
       </div>
     </div>
     <div class="filter-group">
@@ -296,7 +296,17 @@ async function fetchProviders() {
     });
 
     attachCompareListeners();
-    applyFilters();
+   
+
+// Reset all filters on load so all cards show
+document.querySelectorAll('#provider-filters input, #service-filters input')
+  .forEach(c => c.checked = false);
+document.querySelector('input[name="trial"][value="all"]').checked = true;
+priceRange.value = 10000;
+priceDisplay.textContent = 'No price limit';
+
+applyFilters();
+    
 
   } catch (err) {
     loadingEl.innerHTML = `
@@ -442,7 +452,7 @@ document.querySelectorAll('#provider-filters input, #service-filters input, inpu
 
 priceRange.addEventListener('input', () => {
   const val = parseInt(priceRange.value);
-  priceDisplay.textContent = val >= 2000 ? 'No price limit' : `Up to $${val}/mo`;
+  priceDisplay.textContent = val >= 10000 ? 'No price limit' : `Up to $${val}/mo`;
   applyFilters();
 });
 
