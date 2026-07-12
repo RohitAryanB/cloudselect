@@ -1,0 +1,16 @@
+{
+  "provider": "Amazon Web Services (AWS)",
+  "slug": "aws",
+  "g2Rating": 4.4,
+  "gartnerRating": 4.5,
+  "trustRadiusRating": 8.2,
+  "capterraRating": 4.5,
+  "overallRating": 4.38,
+  "reviewCounts": {
+    "g2": 2756,
+    "gartner": 1200,
+    "trustRadius": 2200,
+    "capterra": 1800
+  },
+  "note": "AI estimated based on 2023-2024 platform data"
+}

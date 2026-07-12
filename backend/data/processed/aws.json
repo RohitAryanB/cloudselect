@@ -1,0 +1,40 @@
+{
+  "provider": "aws",
+  "strengths": [
+    "Scalability and Flexibility",
+    "Security and Compliance",
+    "Global Infrastructure",
+    "Wide Range of Services",
+    "Reliability and Performance"
+  ],
+  "services": [
+    "Amazon EC2",
+    "Amazon S3",
+    "Amazon RDS",
+    "Amazon VPC",
+    "AWS Lambda",
+    "Amazon DynamoDB",
+    "Amazon CloudFront",
+    "AWS IAM",
+    "AWS CloudWatch",
+    "AWS CloudFormation"
+  ],
+  "infrastructure": {
+    "highlights": [
+      "123 Availability Zones",
+      "39 Geographic Regions",
+      "7 more Availability Zones announced",
+      "2 more AWS Regions announced",
+      "31 Edge Network Locations"
+    ],
+    "global_regions": 39,
+    "certifications": [
+      "SOC 1",
+      "SOC 2",
+      "SOC 3",
+      "PCI DSS",
+      "HIPAA/HITECH",
+      "FedRAMP"
+    ]
+  }
+}

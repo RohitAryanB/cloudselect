@@ -1,0 +1,16 @@
+{
+  "provider": "Microsoft Azure",
+  "slug": "azure",
+  "g2Rating": 4.4,
+  "gartnerRating": 4.5,
+  "trustRadiusRating": 8.5,
+  "capterraRating": 4.5,
+  "overallRating": 4.48,
+  "reviewCounts": {
+    "g2": 2200,
+    "gartner": 500,
+    "trustRadius": 1800,
+    "capterra": 1500
+  },
+  "note": "AI estimated based on 2023-2024 platform data"
+}

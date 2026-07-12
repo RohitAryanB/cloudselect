@@ -1,0 +1,16 @@
+{
+  "provider": "Google Cloud Platform (GCP)",
+  "slug": "gcp",
+  "g2Rating": 4.5,
+  "gartnerRating": 4.6,
+  "trustRadiusRating": 8.8,
+  "capterraRating": 4.7,
+  "overallRating": 4.63,
+  "reviewCounts": {
+    "g2": 2500,
+    "gartner": 1200,
+    "trustRadius": 1800,
+    "capterra": 1000
+  },
+  "note": "AI estimated based on 2023-2024 platform data"
+}
