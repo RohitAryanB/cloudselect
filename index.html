@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CloudSelect Platform</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/navbar.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/cards.css">
+<link rel="stylesheet" href="css/compare.css">
+<style>
+
+</style>
+</head>
+
+<body>
+<!-- ================= NAVBAR ================= -->
+<header>
+  <a class="logo" href="#">
+    <div class="logo-icon"><i class="fa-solid fa-cloud"></i></div>
+    <span class="logo-text">CLOUDSELECT</span>
+  </a>
+  <nav>
+  <a href="#" class="active">Catalogue</a>
+
+  <div class="nav-profile" id="profile-menu">
+    <div class="avatar">JD</div>
+    <span id="username">John Doe</span>
+    <i class="fa-solid fa-chevron-down"></i>
+
+    <div class="profile-dropdown">
+      <a href="#"><i class="fa-solid fa-user"></i> Profile</a>
+      <a href="#"><i class="fa-solid fa-table-columns"></i> Dashboard</a>
+      <a href="#"><i class="fa-solid fa-gear"></i> Settings</a>
+      <a href="#"><i class="fa-solid fa-circle-question"></i> Help</a>
+      <hr>
+      <a href="#"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+    </div>
+  </div>
+</nav>
+</header>
+<!-- ================= MAIN LAYOUT ================= -->
+<div class="app-body">
+
+  <!-- ICON BAR -->
+<aside class="icon-bar">
+  <div class="top-icons">
+    <button class="icon-btn active">
+      <i class="fa-solid fa-house"></i>
+    </button>
+  </div>
+</aside>
+
+  <!-- FILTERS -->
+  <!-- FILTERS -->
+<aside class="filters">
+  <div class="filters-header">
+    <i class="fa-solid fa-sliders"></i>
+    Filters &amp; Preferences
+  </div>
+
+  <!-- Cloud Providers -->
+  <div class="filter-group">
+    <h3>Cloud Providers</h3>
+    <div class="filter-options" id="provider-filters">
+      <label class="filter-option"><input type="checkbox" value="aws"><span>AWS</span></label>
+      <label class="filter-option"><input type="checkbox" value="azure"><span>Microsoft Azure</span></label>
+      <label class="filter-option"><input type="checkbox" value="gcp"><span>Google Cloud Platform (GCP)</span></label>
+      <label class="filter-option"><input type="checkbox" value="oracle"><span>Oracle Cloud Infrastructure (OCI)</span></label>
+      <label class="filter-option"><input type="checkbox" value="ibm"><span>IBM Cloud</span></label>
+      <label class="filter-option"><input type="checkbox" value="sify"><span>Sify Cloud</span></label>
+      <label class="filter-option"><input type="checkbox" value="yotta"><span>Yotta Data Services</span></label>
+      <label class="filter-option"><input type="checkbox" value="tata"><span>Tata Communications Cloud (IZO)</span></label>
+      <label class="filter-option"><input type="checkbox" value="nxtra"><span>Nxtra Data (Airtel)</span></label>
+    </div>
+  </div>
+
+  <!-- Primary Workload -->
+  <div class="filter-group">
+    <h3>Primary Workload</h3>
+
+    <div class="filter-options" id="service-filters">
+
+      <label class="filter-option">
+        <input type="checkbox" value="website">
+        <span>Host a Website</span>
+      </label>
+
+      <label class="filter-option">
+        <input type="checkbox" value="webapp">
+        <span>Build a Web Application</span>
+      </label>
+
+      <label class="filter-option">
+        <input type="checkbox" value="mobile">
+        <span>Mobile App Backend</span>
+      </label>
+
+      <label class="filter-option">
+        <input type="checkbox" value="ai">
+        <span>AI / Machine Learning</span>
+      </label>
+
+      <label class="filter-option">
+        <input type="checkbox" value="database">
+        <span>Database Hosting</span>
+      </label>
+
+      <label class="filter-option">
+        <input type="checkbox" value="analytics">
+        <span>Data Analytics</span>
+      </label>
+
+      <label class="filter-option">
+        <input type="checkbox" value="containers">
+        <span>Containers &amp; Kubernetes</span>
+      </label>
+
+      <label class="filter-option">
+        <input type="checkbox" value="serverless">
+        <span>Serverless Applications</span>
+      </label>
+
+      <label class="filter-option">
+        <input type="checkbox" value="storage">
+        <span>Storage &amp; Backup</span>
+      </label>
+
+      <label class="filter-option">
+        <input type="checkbox" value="devops">
+        <span>DevOps &amp; CI/CD</span>
+      </label>
+
+      <label class="filter-option">
+        <input type="checkbox" value="iot">
+        <span>IoT Solutions</span>
+      </label>
+
+      <label class="filter-option">
+        <input type="checkbox" value="gaming">
+        <span>Game Hosting</span>
+      </label>
+
+    </div>
+  </div>
+
+  <!-- Reset Button -->
+<button id="reset-btn" class="btn btn-secondary" style="width:100%; margin-top:20px;">
+    <i class="fa-solid fa-rotate-left"></i> Reset Filters
+</button>
+
+</aside>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <!-- SEARCH BAR -->
+    <div class="search-bar">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="text" id="search-input" placeholder="Search cloud services (e.g., Kubernetes, Database, Serverless)">
+    </div>
+    <!-- PAGE TITLE -->
+    <h1 class="section-title">Featured Cloud Platforms</h1>
+    <!-- PROVIDER CARDS -->
+    <div class="cards-grid" id="cards-grid">
+
+      <!-- AWS -->
+      <div class="cloud-card"
+        data-provider="aws"
+        data-trial="active"
+        data-services="website,webapp,mobile,ai,database,analytics,containers,serverless,storage,devops,iot,gaming"
+        data-search="aws amazon web services compute ec2 s3 lambda rds kubernetes">
+        <div class="card-header">
+          <div class="card-logo"><span class="logo-aws">aws<span>↗</span></span></div>
+          <div class="rating"><i class="fa-solid fa-star"></i> 4.7/5</div>
+        </div>
+        <div class="badge badge-active">ACTIVE FREE TRIAL</div>
+        <hr class="card-divider">
+        <div class="card-info">
+          <div class="info-block">
+            <span class="info-label">Price Range:</span>
+            <span class="info-value price-value">Loading...</span>
+            <a href="#" class="price-link">Pricing Calculator <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </div>
+          <div class="info-block">
+            <span class="info-label">Free Offers:</span>
+            <ul class="bullet-list"><li>12 Months Free</li><li>750 hours t2.micro</li></ul>
+          </div>
+          <div class="info-block">
+           <span class="info-label">Primary Workloads:</span>
+           <ul class="bullet-list">
+              <li>Host a Website</li>
+              <li>Build a Web Application</li>
+              <li>AI / Machine Learning</li>
+              <li>Database Hosting</li>
+              <li>Containers & Kubernetes</li>
+           </ul>
+          </div>
+        </div>
+        <div class="card-actions">
+          <button class="btn btn-primary catalogue-btn" data-id="aws">
+    View Full Catalogue
+</button>
+          <button class="btn btn-secondary compare-btn" data-id="aws">Add to Compare</button>
+        </div>
+      </div>
+
+      <!-- Azure -->
+      <div class="cloud-card"
+        data-provider="azure"
+        data-trial="active"
+        data-services="website,webapp,mobile,ai,database,analytics,containers,serverless,storage,devops,iot"
+        data-search="azure microsoft cloud virtual machines sql serverless kubernetes">
+        <div class="card-header">
+          <div class="card-logo">
+            <div class="logo-azure"><div class="azure-triangle"></div>Azure</div>
+          </div>
+          <div class="rating"><i class="fa-solid fa-star"></i> 4.7/5</div>
+        </div>
+        <div class="badge badge-active">ACTIVE FREE TRIAL</div>
+        <hr class="card-divider">
+        <div class="card-info">
+          <div class="info-block">
+            <span class="info-label">Price Range:</span>
+            <span class="info-value price-value">Loading...</span>
+            <a href="#" class="price-link">Pricing Calculator <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </div>
+          <div class="info-block">
+            <span class="info-label">Free Offers:</span>
+            <ul class="bullet-list"><li>$200 Credit for 30 Days</li><li>12 Months Popular Services Free</li></ul>
+          </div>
+          <div class="info-block">
+            <span class="info-label">Primary Workloads:</span>
+            <ul class="bullet-list">
+                <li>Host a Website</li>
+                <li>Build a Web Application</li>
+                <li>AI / Machine Learning</li>
+                <li>Database Hosting</li>
+                <li>Containers & Kubernetes</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card-actions">
+          <button class="btn btn-primary catalogue-btn" data-id="azure">
+    View Full Catalogue
+</button>
+          <button class="btn btn-secondary compare-btn" data-id="azure">Add to Compare</button>
+        </div>
+      </div>
+
+      <!-- GCP -->
+      <div class="cloud-card"
+        data-provider="gcp"
+        data-trial="tier"
+        data-services="website,webapp,ai,database,analytics,containers,serverless,storage,devops"
+        data-search="gcp google cloud platform bigquery kubernetes engine compute storage ai ml">
+        <div class="card-header">
+          <div class="card-logo"><span class="logo-gcp">GCP</span></div>
+          <div class="rating"><i class="fa-solid fa-star"></i> 4.7/5</div>
+        </div>
+        <div class="badge badge-tier">FREE TIER AVAILABLE</div>
+        <hr class="card-divider">
+        <div class="card-info">
+          <div class="info-block">
+            <span class="info-label">Price Range:</span>
+            <span class="info-value price-value">Loading...</span>
+            <a href="#" class="price-link">Pricing Calculator <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </div>
+          <div class="info-block">
+            <span class="info-label">Free Offers:</span>
+            <ul class="bullet-list"><li>$300 Credit for 90 Days</li><li>Free Tier 20+ products</li></ul>
+          </div>
+          <div class="info-block">
+            <span class="info-label">Primary Workloads:</span>
+            <ul class="bullet-list">
+               <li>AI / Machine Learning</li>
+               <li>Data Analytics</li>
+               <li>Database Hosting</li>
+               <li>Containers & Kubernetes</li>
+               <li>Serverless Applications</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card-actions">
+          <button class="btn btn-primary catalogue-btn" data-id="gcp">
+    View Full Catalogue
+</button>
+          <button class="btn btn-secondary compare-btn" data-id="gcp">Add to Compare</button>
+        </div>
+      </div>
+
+      <!-- Oracle -->
+      <div class="cloud-card"
+        data-provider="oracle"
+        data-trial="tier"
+        data-services="website,webapp,database,analytics,containers,storage,devops"
+        data-search="oracle cloud infrastructure autonomous database compute storage">
+        <div class="card-header">
+          <div class="card-logo"><span class="logo-oracle">ORACLE CLOUD</span></div>
+          <div class="rating"><i class="fa-solid fa-star"></i> 4.7/5</div>
+        </div>
+        <div class="badge badge-tier">FREE TIER AVAILABLE</div>
+        <hr class="card-divider">
+        <div class="card-info">
+          <div class="info-block">
+            <span class="info-label">Price Range:</span>
+            <span class="info-value price-value">Loading...</span>
+            <a href="#" class="price-link">Pricing Calculator <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </div>
+          <div class="info-block">
+            <span class="info-label">Free Offers:</span>
+            <ul class="bullet-list"><li>$300 Credit for 90 Days</li><li>Free Tier 20+ products</li></ul>
+          </div>
+          <div class="info-block">
+            <span class="info-label">Primary Workloads:</span>
+            <ul class="bullet-list">
+              <li>Database Hosting</li>
+              <li>Build a Web Application</li>
+              <li>Host a Website</li>
+              <li>Containers & Kubernetes</li>
+              <li>Storage & Backup</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card-actions">
+          <button class="btn btn-primary catalogue-btn" data-id="oracle">
+    View Full Catalogue
+</button>
+          <button class="btn btn-secondary compare-btn" data-id="oracle">Add to Compare</button>
+        </div>
+      </div>
+
+      <!-- IBM -->
+      <div class="cloud-card"
+        data-provider="ibm"
+        data-trial="none"
+        data-services="webapp,ai,database,analytics,containers,serverless,devops,iot"
+        data-search="ibm cloud watson ai kubernetes openshift databases compute">
+        <div class="card-header">
+          <div class="card-logo"><span class="logo-ibm">IBM</span></div>
+          <div class="rating"><i class="fa-solid fa-star"></i> 4.2/5</div>
+        </div>
+        <div class="badge" style="background:#f1f5f9;color:#64748b;">NO FREE TRIAL</div>
+        <hr class="card-divider">
+        <div class="card-info">
+          <div class="info-block">
+            <span class="info-label">Price Range:</span>
+            <span class="info-value price-value">Loading...</span>
+            <a href="#" class="price-link">Pricing Calculator <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </div>
+          <div class="info-block">
+            <span class="info-label">Free Offers:</span>
+            <ul class="bullet-list"><li>Lite plan on select services</li><li>30-day access on some tiers</li></ul>
+          </div>
+          <div class="info-block">
+            <span class="info-label">Primary Workloads:</span>
+            <ul class="bullet-list">
+              <li>AI / Machine Learning</li>
+              <li>Database Hosting</li>
+              <li>Data Analytics</li>
+              <li>Containers & Kubernetes</li>
+              <li>DevOps & CI/CD</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card-actions">
+          <button class="btn btn-primary catalogue-btn" data-id="ibm">
+    View Full Catalogue
+</button>
+          <button class="btn btn-secondary compare-btn" data-id="ibm">Add to Compare</button>
+        </div>
+      </div>
+
+      <!-- Sify Cloud -->
+      <div class="cloud-card"
+        data-provider="sify"
+        data-trial="none"
+        data-services="website,webapp,mobile,database,containers,storage,devops"
+        data-search="sify cloud managed cloud hybrid vmware disaster recovery india">
+        <div class="card-header">
+          <div class="card-logo"><span class="logo-sify">Sify Cloud</span></div>
+          <div class="rating"><i class="fa-solid fa-star"></i> 4.1/5</div>
+        </div>
+        <div class="badge" style="background:#f1f5f9;color:#64748b;">NO FREE TRIAL</div>
+        <hr class="card-divider">
+        <div class="card-info">
+          <div class="info-block">
+            <span class="info-label">Price Range:</span>
+            <span class="info-value price-value">Loading...</span>
+            <a href="#" class="price-link">Pricing Calculator <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </div>
+          <div class="info-block">
+            <span class="info-label">Free Offers:</span>
+            <ul class="bullet-list"><li>Custom enterprise trial on request</li><li>Proof-of-concept sandbox for large accounts</li></ul>
+          </div>
+         <div class="info-block">
+            <span class="info-label">Primary Workloads:</span>
+            <ul class="bullet-list">
+              <li>Host a Website</li>
+              <li>Build a Web Application</li>
+              <li>Mobile App Backend</li>
+              <li>Database Hosting</li>
+              <li>Storage & Backup</li>
+            </ul>
+        </div>
+        </div>
+        <div class="card-actions">
+          <button class="btn btn-primary catalogue-btn" data-id="sify">
+    View Full Catalogue
+</button>
+          <button class="btn btn-secondary compare-btn" data-id="sify">Add to Compare</button>
+        </div>
+      </div>
+
+      <!-- Yotta Data Services -->
+      <div class="cloud-card"
+        data-provider="yotta"
+        data-trial="none"
+        data-services="webapp,ai,database,analytics,containers,storage"
+        data-search="yotta gpu ai bharat cloud enterprise storage compute">
+        <div class="card-header">
+          <div class="card-logo"><span class="logo-yotta">Yotta</span></div>
+          <div class="rating"><i class="fa-solid fa-star"></i> 4.3/5</div>
+        </div>
+        <div class="badge" style="background:#f1f5f9;color:#64748b;">NO FREE TRIAL</div>
+        <hr class="card-divider">
+        <div class="card-info">
+          <div class="info-block">
+            <span class="info-label">Price Range:</span>
+            <span class="info-value price-value">Loading...</span>
+            <a href="#" class="price-link">Pricing Calculator <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </div>
+          <div class="info-block">
+            <span class="info-label">Free Offers:</span>
+            <ul class="bullet-list"><li>GPU cluster demo on request</li><li>Enterprise pilot programs</li></ul>
+          </div>
+          <div class="info-block">
+            <span class="info-label">Primary Workloads:</span>
+            <ul class="bullet-list">
+               <li>AI / Machine Learning</li>
+               <li>Data Analytics</li>
+               <li>Database Hosting</li>
+               <li>Containers & Kubernetes</li>
+              <li>Storage & Backup</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card-actions">
+          <button class="btn btn-primary catalogue-btn" data-id="yotta">
+    View Full Catalogue
+</button>
+          <button class="btn btn-secondary compare-btn" data-id="yotta">Add to Compare</button>
+        </div>
+      </div>
+
+      <!-- Tata Communications Cloud (IZO) -->
+      <div class="cloud-card"
+        data-provider="tata"
+        data-trial="none"
+        data-services="website,webapp,mobile,database,containers,storage,devops,iot"
+        data-search="tata communications izo cloud managed hosting hybrid multi cloud">
+        <div class="card-header">
+          <div class="card-logo"><span class="logo-tata">TATA <span>IZO</span></span></div>
+          <div class="rating"><i class="fa-solid fa-star"></i> 4.0/5</div>
+        </div>
+        <div class="badge" style="background:#f1f5f9;color:#64748b;">NO FREE TRIAL</div>
+        <hr class="card-divider">
+        <div class="card-info">
+          <div class="info-block">
+            <span class="info-label">Price Range:</span>
+            <span class="info-value price-value">Loading...</span>
+            <a href="#" class="price-link">Pricing Calculator <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </div>
+          <div class="info-block">
+            <span class="info-label">Free Offers:</span>
+            <ul class="bullet-list"><li>Custom managed hosting trial</li><li>Migration assessment on request</li></ul>
+          </div>
+          <div class="info-block">
+            <span class="info-label">Primary Workloads:</span>
+            <ul class="bullet-list">
+              <li>Host a Website</li>
+              <li>Build a Web Application</li>
+              <li>Mobile App Backend</li>
+              <li>Containers & Kubernetes</li>
+              <li>DevOps & CI/CD</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card-actions">
+          <button class="btn btn-primary catalogue-btn" data-id="tata">
+    View Full Catalogue
+</button>
+          <button class="btn btn-secondary compare-btn" data-id="tata">Add to Compare</button>
+        </div>
+      </div>
+
+      <!-- Nxtra Data (Airtel) -->
+      <div class="cloud-card"
+        data-provider="nxtra"
+        data-trial="none"
+        data-services="website,webapp,database,containers,storage,devops,iot"
+        data-search="nxtra airtel edge cloud colocation enterprise managed services">
+        <div class="card-header">
+          <div class="card-logo"><span class="logo-nxtra">Nxtra</span></div>
+          <div class="rating"><i class="fa-solid fa-star"></i> 4.0/5</div>
+        </div>
+        <div class="badge" style="background:#f1f5f9;color:#64748b;">NO FREE TRIAL</div>
+        <hr class="card-divider">
+        <div class="card-info">
+          <div class="info-block">
+            <span class="info-label">Price Range:</span>
+            <span class="info-value price-value">Loading...</span>
+            <a href="#" class="price-link">Pricing Calculator <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </div>
+          <div class="info-block">
+            <span class="info-label">Free Offers:</span>
+            <ul class="bullet-list"><li>Colocation site tour on request</li><li>Custom enterprise pilot</li></ul>
+          </div>
+          <div class="info-block">
+            <span class="info-label">Primary Workloads:</span>
+            <ul class="bullet-list">
+               <li>Host a Website</li>
+               <li>Build a Web Application</li>
+              <li>Database Hosting</li>
+              <li>Storage & Backup</li>
+              <li>IoT Solutions</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card-actions">
+          <button class="btn btn-primary catalogue-btn" data-id="nxtra">
+    View Full Catalogue
+</button>
+          <button class="btn btn-secondary compare-btn" data-id="nxtra">Add to Compare</button>
+        </div>
+      </div>
+
+      <!-- No results placeholder -->
+      <div class="no-results" id="no-results">
+        <i class="fa-solid fa-cloud-slash"></i>
+        <p>No cloud platforms match your filters.<br>Try adjusting your search or filter criteria.</p>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<!-- COMPARE BAR -->
+<div class="compare-bar" id="compare-bar">
+  <span class="compare-label">Compare Selected</span>
+  <div class="compare-chips" id="compare-chips"></div>
+  <button class="btn-compare-now" id="compare-now-btn">Compare Now</button>
+  <button class="compare-close" id="compare-clear"><i class="fa-solid fa-xmark"></i></button>
+</div>
+
+<!-- COMPARE MODAL -->
+<div class="modal-overlay" id="compare-modal">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="modal-title">Side-by-Side Comparison</span>
+      <button class="modal-close" id="modal-close-btn"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div id="compare-modal-body"></div>
+  </div>
+</div>
+
+<!-- JAVASCRIPT -->
+<script src="js/data.js"></script>
+<script src="js/state.js"></script>
+<script src="js/filters.js"></script>
+<script src="js/compare.js"></script>
+<script src="js/app.js"></script>
+<script src="js/backend.js"></script>
+
+</body>
+</html>

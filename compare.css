@@ -1,0 +1,28 @@
+/* COMPARE BAR */
+.compare-bar{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--white);border:1px solid var(--gray-200);border-radius:50px;padding:10px 18px;display:flex;align-items:center;gap:12px;box-shadow:var(--shadow-lg);z-index:200;transition:all .3s;opacity:0;pointer-events:none}
+.compare-bar.visible{opacity:1;pointer-events:all}
+.compare-label{font-weight:600;font-size:13px;color:var(--gray-700);white-space:nowrap}
+.compare-chips{display:flex;gap:6px}
+.compare-chip{width:30px;height:30px;border-radius:50%;border:2px solid var(--gray-200);background:var(--gray-50);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;cursor:pointer;transition:all .15s;position:relative}
+.compare-chip:hover{border-color:#ef4444}
+.compare-chip:hover::after{content:'×';position:absolute;font-size:14px;font-weight:700;color:#ef4444}
+.compare-chip:hover > *{opacity:0}
+.compare-close{width:28px;height:28px;border-radius:50%;border:1px solid var(--gray-200);background:var(--white);cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--gray-500);font-size:13px;transition:all .15s}
+.compare-close:hover{background:var(--gray-100);color:var(--gray-900)}
+.btn-compare-now{padding:8px 16px;border-radius:20px;background:var(--blue);color:white;border:none;font-family:inherit;font-size:12.5px;font-weight:600;cursor:pointer;transition:background .15s;white-space:nowrap}
+.btn-compare-now:hover{background:#1d4ed8}
+
+/* MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:300;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .2s}
+.modal-overlay.visible{opacity:1;pointer-events:all}
+.modal{background:var(--white);border-radius:16px;padding:28px;max-width:700px;width:90%;box-shadow:var(--shadow-lg);transform:translateY(20px);transition:transform .2s}
+.modal-overlay.visible .modal{transform:translateY(0)}
+.modal-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+.modal-title{font-size:16px;font-weight:700;color:var(--gray-900)}
+.modal-close{background:none;border:none;cursor:pointer;color:var(--gray-400);font-size:18px;transition:color .15s}
+.modal-close:hover{color:var(--gray-900)}
+.compare-table{width:100%;border-collapse:collapse;font-size:13px}
+.compare-table th{padding:10px 14px;text-align:left;background:var(--gray-50);color:var(--gray-600);font-weight:600;border-bottom:2px solid var(--gray-200);font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+.compare-table td{padding:10px 14px;border-bottom:1px solid var(--gray-100);color:var(--gray-700);vertical-align:top}
+.compare-table tr:last-child td{border-bottom:none}
+.compare-table td:first-child{font-weight:600;color:var(--gray-600);background:var(--gray-50);width:130px}

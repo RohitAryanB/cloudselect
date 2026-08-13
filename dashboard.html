@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CloudSelect Dashboard</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <i class="fa-solid fa-cloud"></i>
+            <span>CloudSelect</span>
+        </div>
+
+        <div class="provider-name">
+            <div id="provider-logo"></div>
+
+            <span id="provider-title">
+                AWS
+            </span>
+        </div>
+
+        <ul class="menu">
+
+            <li class="active">
+                <i class="fa-solid fa-gauge-high"></i>
+                <span>Dashboard</span>
+            </li>
+
+            <li>
+                <i class="fa-solid fa-microchip"></i>
+                <span>EC2</span>
+            </li>
+
+            <li>
+                <i class="fa-solid fa-database"></i>
+                <span>S3 Storage</span>
+            </li>
+
+            <li>
+                <i class="fa-solid fa-server"></i>
+                <span>RDS Database</span>
+            </li>
+
+            <li>
+                <i class="fa-solid fa-dollar-sign"></i>
+                <span>Billing & Cost</span>
+            </li>
+
+            <li>
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Monitoring</span>
+            </li>
+
+        </ul>
+
+        <div class="logout" id="logout-btn">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span>Logout</span>
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="content">
+
+        <!-- TOPBAR -->
+
+        <div class="topbar">
+
+            <div class="page-title">
+
+                <div
+                    class="header-provider-logo"
+                    id="header-provider-logo">
+                    aws
+                </div>
+
+                <h1 id="dashboard-title">
+                    AWS Dashboard
+                </h1>
+
+            </div>
+
+
+            <div class="top-actions">
+
+                <div class="region-select">
+
+                    <div>
+                        <small>Region</small>
+                        <span id="region-name">
+                            ap-south-1 (Mumbai)
+                        </span>
+                    </div>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </div>
+
+
+                <button class="notification-btn">
+
+                    <i class="fa-regular fa-bell"></i>
+
+                    <span>3</span>
+
+                </button>
+
+
+                <button class="profile-btn" id="profile-btn">
+
+                    <div class="profile-circle">
+                        JD
+                    </div>
+
+                    <span>John Doe</span>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= ACCOUNT BAR ================= -->
+
+        <div class="account-bar">
+
+            <div class="account-item account-provider">
+
+                <i class="fa-solid fa-cloud"></i>
+
+                <strong id="account-provider-name">
+                    AWS
+                </strong>
+
+            </div>
+
+
+            <div class="account-divider"></div>
+
+
+            <div class="account-item">
+
+                <span>Account ID</span>
+
+                <strong id="account-id">
+                    1234-5678-9012
+                </strong>
+
+                <i
+                    class="fa-regular fa-copy copy-icon"
+                    id="copy-account">
+                </i>
+
+            </div>
+
+
+            <div class="account-divider"></div>
+
+
+            <div class="account-item">
+
+                <span>Account Name</span>
+
+                <strong id="account-name">
+                    CloudSelect User
+                </strong>
+
+            </div>
+
+
+            <div class="account-divider"></div>
+
+
+            <div class="account-item">
+
+                <span class="connected">
+                    <i class="fa-solid fa-circle-check"></i>
+                    Connected
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= SUMMARY CARDS ================= -->
+
+        <div class="summary-grid">
+
+            <!-- Total Resources -->
+
+            <div class="summary-card">
+
+                <div class="summary-icon blue">
+                    <i class="fa-solid fa-server"></i>
+                </div>
+
+                <div class="summary-content">
+
+                    <span>Total Resources</span>
+
+                    <h2 id="total-resources">
+                        0
+                    </h2>
+
+                    <a href="#">
+                        View resources
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Running Resources -->
+
+            <div class="summary-card">
+
+                <div class="summary-icon green">
+                    <i class="fa-solid fa-play"></i>
+                </div>
+
+                <div class="summary-content">
+
+                    <span>Running Resources</span>
+
+                    <h2 id="running-resources">
+                        0
+                    </h2>
+
+                    <a href="#">
+                        View running
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Storage -->
+
+            <div class="summary-card">
+
+                <div class="summary-icon purple">
+                    <i class="fa-solid fa-database"></i>
+                </div>
+
+                <div class="summary-content">
+
+                    <span>Storage Used</span>
+
+                    <h2 id="storage-used">
+                        0 GB
+                    </h2>
+
+                    <p>Across all services</p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Cost -->
+
+            <div class="summary-card">
+
+                <div class="summary-icon orange">
+                    <i class="fa-solid fa-dollar-sign"></i>
+                </div>
+
+                <div class="summary-content">
+
+                    <span>Monthly Cost</span>
+
+                    <h2 id="monthly-cost">
+                        $0
+                    </h2>
+
+                    <p>Estimated monthly spend</p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Health -->
+
+            <div class="summary-card">
+
+                <div class="summary-icon health">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                </div>
+
+                <div class="summary-content">
+
+                    <span>Health Status</span>
+
+                    <h2 id="health-status">
+                        Healthy
+                    </h2>
+
+                    <p>All systems operational</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= DASHBOARD GRID ================= -->
+
+        <div class="dashboard-grid">
+
+
+            <!-- ================= QUICK ACTIONS ================= -->
+
+            <section class="dashboard-panel">
+
+                <div class="panel-header">
+
+                    <h2>
+                        Quick Actions
+                    </h2>
+
+                </div>
+
+                <div
+                    class="quick-actions"
+                    id="quick-actions">
+                </div>
+
+                <div class="panel-footer">
+
+                    <a href="#">
+                        View all services
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= RESOURCE OVERVIEW ================= -->
+
+            <section class="dashboard-panel">
+
+                <div class="panel-header">
+
+                    <h2>
+                        Resource Overview
+                    </h2>
+
+                </div>
+
+
+                <div class="resource-overview">
+
+                    <div class="donut-wrapper">
+
+                        <div class="donut-chart">
+
+                            <div class="donut-center">
+
+                                <strong id="donut-total">
+                                    32
+                                </strong>
+
+                                <span>Resources</span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="resource-legend"
+                        id="resource-legend">
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= COST CHART ================= -->
+
+            <section class="dashboard-panel">
+
+                <div class="cost-header">
+
+                    <h2>
+                        Cost Overview
+                    </h2>
+
+                    <div class="cost-current">
+
+                        <span>Current month</span>
+
+                        <strong id="current-cost">
+                            $45.30
+                        </strong>
+
+                        <small>
+                            +4.2%
+                        </small>
+
+                        <p>
+                            vs last month
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="line-chart">
+
+                    <svg
+                        viewBox="0 0 500 180"
+                        preserveAspectRatio="none">
+
+                        <defs>
+
+                            <linearGradient
+                                id="areaGradient"
+                                x1="0"
+                                y1="0"
+                                x2="0"
+                                y2="1">
+
+                                <stop
+                                    offset="0%"
+                                    stop-opacity=".22"/>
+
+                                <stop
+                                    offset="100%"
+                                    stop-opacity="0"/>
+
+                            </linearGradient>
+
+                        </defs>
+
+
+                        <g class="chart-grid">
+
+                            <line
+                                x1="0"
+                                y1="20"
+                                x2="500"
+                                y2="20"/>
+
+                            <line
+                                x1="0"
+                                y1="60"
+                                x2="500"
+                                y2="60"/>
+
+                            <line
+                                x1="0"
+                                y1="100"
+                                x2="500"
+                                y2="100"/>
+
+                            <line
+                                x1="0"
+                                y1="140"
+                                x2="500"
+                                y2="140"/>
+
+                        </g>
+
+
+                        <path
+                            class="chart-area"
+                            d="M0,140
+                               C70,130 90,100 150,115
+                               S220,70 280,90
+                               S350,45 400,70
+                               S460,35 500,50
+                               L500,180
+                               L0,180 Z">
+                        </path>
+
+
+                        <path
+                            class="chart-line"
+                            d="M0,140
+                               C70,130 90,100 150,115
+                               S220,70 280,90
+                               S350,45 400,70
+                               S460,35 500,50">
+                        </path>
+
+
+                        <g class="chart-points">
+
+                            <circle cx="0" cy="140" r="4"/>
+                            <circle cx="100" cy="104" r="4"/>
+                            <circle cx="200" cy="80" r="4"/>
+                            <circle cx="300" cy="85" r="4"/>
+                            <circle cx="400" cy="70" r="4"/>
+                            <circle cx="500" cy="50" r="4"/>
+
+                        </g>
+
+                    </svg>
+
+
+                    <div class="chart-labels">
+
+                        <span>Mar</span>
+                        <span>Apr</span>
+                        <span>May</span>
+                        <span>Jun</span>
+                        <span>Jul</span>
+                        <span>Aug</span>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= RECENT ACTIVITY ================= -->
+
+            <section class="dashboard-panel">
+
+                <div class="panel-header">
+
+                    <h2>
+                        Recent Activity
+                    </h2>
+
+                    <a href="#">
+                        View all
+                    </a>
+
+                </div>
+
+                <div
+                    class="activity-list"
+                    id="activity-list">
+                </div>
+
+            </section>
+
+
+            <!-- ================= RECOMMENDATIONS ================= -->
+
+            <section class="dashboard-panel">
+
+                <div class="panel-header">
+
+                    <h2>
+                        Recommendations
+                    </h2>
+
+                </div>
+
+                <div
+                    class="recommendations"
+                    id="recommendations">
+                </div>
+
+            </section>
+
+
+            <!-- ================= RESOURCE HEALTH ================= -->
+
+            <section class="dashboard-panel">
+
+                <div class="panel-header">
+
+                    <h2>
+                        Resource Health
+                    </h2>
+
+                </div>
+
+                <div
+                    class="health-list"
+                    id="resource-health">
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script src="js/data.js"></script>
+<script src="js/dashboardData.js"></script>
+<script src="js/dashboard.js"></script>
+
+</body>
+
+</html>
