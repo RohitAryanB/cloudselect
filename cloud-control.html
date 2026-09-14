@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CloudSelect — Cloud Control</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="cloud-control.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<div class="dashboard">
+
+    <aside class="sidebar">
+        <div class="logo">
+            <i class="fa-solid fa-cloud"></i>
+            <span>CloudSelect</span>
+        </div>
+
+        <ul class="menu">
+            <li onclick="window.location.href='dashboard.html'">
+                <i class="fa-solid fa-gauge-high"></i>
+                <span>Dashboard</span>
+            </li>
+            <li class="active">
+                <i class="fa-solid fa-microchip"></i>
+                <span>Cloud Control</span>
+            </li>
+        </ul>
+
+        <div class="logout" id="logout-btn">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span>Logout</span>
+        </div>
+    </aside>
+
+    <main class="content">
+
+        <header class="topbar">
+            <h1>Cloud Control</h1>
+            <p class="subtitle">Choose a provider and manage real compute instances from here.</p>
+        </header>
+
+        <div id="auth-warning" class="cc-banner cc-banner-warn" style="display:none;">
+            You're not signed in. <a href="login.html">Sign in</a> to control instances.
+        </div>
+
+        <div id="api-error-banner" class="cc-banner cc-banner-error" style="display:none;"></div>
+
+        <!-- Provider tabs -->
+        <div class="cc-provider-tabs" id="provider-tabs">
+            <button class="cc-tab active" data-provider="aws">
+                <i class="fa-brands fa-aws"></i> AWS
+            </button>
+            <button class="cc-tab cc-tab-disabled" data-provider="gcp" disabled title="No GCP account connected">
+                <i class="fa-brands fa-google"></i> GCP <span class="cc-badge">no account</span>
+            </button>
+            <button class="cc-tab cc-tab-disabled" data-provider="azure" disabled title="No Azure account connected">
+                <i class="fa-brands fa-microsoft"></i> Azure <span class="cc-badge">no account</span>
+            </button>
+            <button class="cc-tab cc-tab-disabled" data-provider="oracle" disabled title="No Oracle Cloud account connected">
+                <i class="fa-solid fa-server"></i> Oracle <span class="cc-badge">no account</span>
+            </button>
+        </div>
+
+        <!-- Launch form -->
+        <section class="cc-card">
+            <h2><i class="fa-solid fa-plus"></i> Launch a new instance</h2>
+            <p class="cc-hint">Only free-tier-eligible instance types are shown, and a small active-instance cap is enforced server-side to protect your free-tier usage.</p>
+
+            <form id="launch-form" class="cc-form">
+                <div class="cc-field">
+                    <label>Name</label>
+                    <input type="text" id="launch-name" placeholder="e.g. my-test-server" required>
+                </div>
+
+                <div class="cc-field">
+                    <label>Region</label>
+                    <select id="launch-region" required></select>
+                </div>
+
+                <div class="cc-field">
+                    <label>Instance type</label>
+                    <select id="launch-instance-type" required></select>
+                </div>
+
+                <div class="cc-field">
+                    <label>Key pair (optional)</label>
+                    <input type="text" id="launch-key-name" placeholder="existing EC2 key pair name">
+                </div>
+
+                <button type="submit" class="cc-btn cc-btn-primary" id="launch-btn">
+                    <i class="fa-solid fa-rocket"></i> Launch instance
+                </button>
+            </form>
+        </section>
+
+        <!-- Instances table -->
+        <section class="cc-card">
+            <div class="cc-card-header">
+                <h2><i class="fa-solid fa-list"></i> Your instances</h2>
+                <div class="cc-header-actions">
+                    <select id="view-region" title="Region to view"></select>
+                    <button class="cc-btn cc-btn-ghost" id="refresh-btn"><i class="fa-solid fa-rotate"></i> Refresh</button>
+                </div>
+            </div>
+
+            <table class="cc-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Instance ID</th>
+                        <th>Type</th>
+                        <th>State</th>
+                        <th>Public IP</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="instances-tbody">
+                    <tr><td colspan="6" class="cc-empty">No instances yet — launch one above.</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+</div>
+
+<!-- Confirm modal -->
+<div id="confirm-modal" class="cc-modal-backdrop" style="display:none;">
+    <div class="cc-modal">
+        <h3 id="confirm-title">Are you sure?</h3>
+        <p id="confirm-message"></p>
+        <div class="cc-modal-actions">
+            <button class="cc-btn cc-btn-ghost" id="confirm-cancel">Cancel</button>
+            <button class="cc-btn cc-btn-danger" id="confirm-ok">Confirm</button>
+        </div>
+    </div>
+</div>
+
+<script src="apiConfig.js"></script>
+<script src="cloud-control.js"></script>
+<script src="sidebar-toggle.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "provider": "IBM Cloud",
+  "slug": "ibm",
+  "g2Rating": 4.4,
+  "gartnerRating": 4.2,
+  "trustRadiusRating": 8.1,
+  "capteiraRating": 4.1,
+  "overallRating": 4.2,
+  "reviewCounts": {
+    "g2": 542,
+    "gartner": 201,
+    "trustRadius": 317,
+    "capterra": 246
+  },
+  "note": "AI estimated based on 2023-2024 platform data"
+}

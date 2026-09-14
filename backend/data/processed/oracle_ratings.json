@@ -1,0 +1,16 @@
+{
+  "provider": "Oracle Cloud Infrastructure (OCI)",
+  "slug": "oracle",
+  "g2Rating": 4.4,
+  "gartnerRating": 4.2,
+  "trustRadiusRating": 8.1,
+  "capterraRating": 4.5,
+  "overallRating": 4.3,
+  "reviewCounts": {
+    "g2": 542,
+    "gartner": 201,
+    "trustRadius": 310,
+    "capterra": 142
+  },
+  "note": "AI estimated based on 2023-2024 platform data"
+}

@@ -1,0 +1,82 @@
+[
+  {
+    "provider": "Amazon Web Services (AWS)",
+    "slug": "aws",
+    "g2Rating": 4.4,
+    "gartnerRating": 4.5,
+    "trustRadiusRating": 8.2,
+    "capterraRating": 4.5,
+    "overallRating": 4.38,
+    "reviewCounts": {
+      "g2": 2756,
+      "gartner": 1200,
+      "trustRadius": 2200,
+      "capterra": 1800
+    },
+    "note": "AI estimated based on 2023-2024 platform data"
+  },
+  {
+    "provider": "Microsoft Azure",
+    "slug": "azure",
+    "g2Rating": 4.4,
+    "gartnerRating": 4.5,
+    "trustRadiusRating": 8.5,
+    "capterraRating": 4.5,
+    "overallRating": 4.48,
+    "reviewCounts": {
+      "g2": 2200,
+      "gartner": 500,
+      "trustRadius": 1800,
+      "capterra": 1500
+    },
+    "note": "AI estimated based on 2023-2024 platform data"
+  },
+  {
+    "provider": "Google Cloud Platform (GCP)",
+    "slug": "gcp",
+    "g2Rating": 4.5,
+    "gartnerRating": 4.6,
+    "trustRadiusRating": 8.8,
+    "capterraRating": 4.7,
+    "overallRating": 4.63,
+    "reviewCounts": {
+      "g2": 2500,
+      "gartner": 1200,
+      "trustRadius": 1800,
+      "capterra": 1000
+    },
+    "note": "AI estimated based on 2023-2024 platform data"
+  },
+  {
+    "provider": "IBM Cloud",
+    "slug": "ibm",
+    "g2Rating": 4.4,
+    "gartnerRating": 4.2,
+    "trustRadiusRating": 8.1,
+    "capteiraRating": 4.1,
+    "overallRating": 4.2,
+    "reviewCounts": {
+      "g2": 542,
+      "gartner": 201,
+      "trustRadius": 317,
+      "capterra": 246
+    },
+    "note": "AI estimated based on 2023-2024 platform data"
+  },
+  {
+    "provider": "Oracle Cloud Infrastructure (OCI)",
+    "slug": "oracle",
+    "g2Rating": 4.4,
+    "gartnerRating": 4.2,
+    "trustRadiusRating": 8.1,
+    "capterraRating": 4.5,
+    "overallRating": 4.3,
+    "reviewCounts": {
+      "g2": 542,
+      "gartner": 201,
+      "trustRadius": 310,
+      "capterra": 142
+    },
+    "note": "AI estimated based on 2023-2024 platform data"
+  }
+]
